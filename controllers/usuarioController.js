@@ -52,7 +52,7 @@ exports.loginUsuario = (req, res) => {
         mensaje: "Login exitoso",
         token: token,
         usuario: {
-          id: usuario.id,
+          id_usuario: usuario.ID_Usuario,
           nombre: usuario.Nombre,
           apellido: usuario.Apellido,
           email: usuario.Email,
