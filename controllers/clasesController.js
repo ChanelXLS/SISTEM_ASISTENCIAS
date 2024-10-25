@@ -36,3 +36,15 @@ exports.obtenerTodasClases = (req, res) => {
     res.status(200).json(clases);
   });
 };
+
+exports.obtenerClasesEstudiante = (req, res) => {
+  const ID_Estudiante = req.params.ID_Estudiante;
+
+  Clase.obtenerClasesEstudiante(ID_Estudiante, (err, clases) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.status(200).json(clases);
+  });
+};

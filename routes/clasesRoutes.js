@@ -11,4 +11,10 @@ router.get("/", clasesController.obtenerTodasClases);
 // Nueva ruta para crear una clase
 router.post("/", clasesController.crearClase);
 
+// Nueva ruta para obtener las clases de un estudiante
+router.get(
+  "/estudiante/:ID_Estudiante",
+  clasesController.obtenerClasesEstudiante
+);
+
 module.exports = router;

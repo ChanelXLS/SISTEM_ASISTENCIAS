@@ -25,4 +25,14 @@ Clase.obtenerTodasClases = (callback) => {
   db.query(query, callback);
 };
 
+Clase.obtenerClasesEstudiante = (ID_Estudiante, callback) => {
+  const query = `
+    SELECT c.ID_Clase, c.Nombre, c.Horario
+    FROM Clases c
+    JOIN estudiantes_clases ec ON c.ID_Clase = ec.ID_Clase
+    WHERE ec.ID_Estudiante = ?
+  `;
+  db.query(query, [ID_Estudiante], callback);
+};
+
 module.exports = Clase;
