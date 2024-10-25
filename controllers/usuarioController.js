@@ -86,3 +86,14 @@ exports.obtenerTodosEstudiantes = (req, res) => {
     res.status(200).json(result);
   });
 };
+
+exports.obtenerTodosProfesores = (req, res) => {
+  Usuario.obtenerTodosProfesores((err, result) => {
+    if (err) {
+      console.error("Error en la consulta SQL: ", err);
+      return res.status(500).send("Error al obtener los profesores");
+    }
+
+    res.status(200).json(result);
+  });
+};

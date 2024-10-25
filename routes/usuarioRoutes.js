@@ -16,4 +16,7 @@ router.get(
 // Ruta para obtener todos los estudiantes
 router.get("/estudiantes", usuarioController.obtenerTodosEstudiantes);
 
+// Ruta para obtener todos los profesores
+router.get("/profesores", usuarioController.obtenerTodosProfesores);
+
 module.exports = router;

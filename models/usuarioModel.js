@@ -47,3 +47,8 @@ Usuario.obtenerTodosEstudiantes = (callback) => {
   db.query(query, callback);
 };
 module.exports = Usuario;
+
+Usuario.obtenerTodosProfesores = (callback) => {
+  const query = "SELECT * FROM Usuarios WHERE Tipo_Usuario = 'Profesor'";
+  db.query(query, callback);
+};
