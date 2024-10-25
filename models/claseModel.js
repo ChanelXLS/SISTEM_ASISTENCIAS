@@ -14,6 +14,7 @@ Clase.obtenerClasesPorProfesor = (id_profesor, callback) => {
   });
 };
 
+<<<<<<< HEAD
 // Nueva función para crear una clase
 Clase.crearClase = (Nombre, ID_Profesor, Horario, callback) => {
   const query = "INSERT INTO Clases (Nombre, ID_Profesor, Horario) VALUES (?, ?, ?)";
@@ -23,6 +24,12 @@ Clase.crearClase = (Nombre, ID_Profesor, Horario, callback) => {
     }
     callback(null, result);
   });
+=======
+Clase.crearClase = (Nombre, ID_Profesor, Horario, callback) => {
+  const query =
+    "INSERT INTO Clases (Nombre, ID_Profesor, Horario) VALUES(?, ?, ?)";
+  db.query(query, [Nombre, ID_Profesor, Horario], callback);
+>>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c
 };
 
 module.exports = Clase;

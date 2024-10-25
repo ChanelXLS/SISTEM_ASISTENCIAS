@@ -61,4 +61,32 @@ exports.loginUsuario = (req, res) => {
       });
     });
   });
+<<<<<<< HEAD
 };
+=======
+};
+
+exports.obtenerEstudiantesPorClase = (req, res) => {
+  const { ID_Clase } = req.params;
+
+  Usuario.obtenerEstudiantesPorClase(ID_Clase, (err, result) => {
+    if (err) {
+      console.error("Error en la consulta SQL: ", err);
+      return res.status(500).send("Error al obtener los estudiantes");
+    }
+
+    res.status(200).json(result);
+  });
+};
+
+exports.obtenerTodosEstudiantes = (req, res) => {
+  Usuario.obtenerTodosEstudiantes((err, result) => {
+    if (err) {
+      console.error("Error en la consulta SQL: ", err);
+      return res.status(500).send("Error al obtener los estudiantes");
+    }
+
+    res.status(200).json(result);
+  });
+};
+>>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c

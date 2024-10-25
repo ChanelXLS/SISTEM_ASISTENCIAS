@@ -31,4 +31,23 @@ Usuario.obtenerPorEmail = (Email, callback) => {
   });
 };
 
+<<<<<<< HEAD
 module.exports = Usuario;
+=======
+Usuario.obtenerEstudiantesPorClase = (ID_Clase, callback) => {
+  const query = `
+    SELECT u.ID_Usuario, u.Nombre, u.Apellido 
+    FROM Usuarios u 
+    JOIN estudiantes_clases ec ON u.ID_Usuario = ec.ID_Estudiante 
+    JOIN clases c ON ec.ID_Clase = c.ID_Clase 
+    WHERE c.ID_Clase = ?
+  `;
+  db.query(query, [ID_Clase], callback);
+};
+
+Usuario.obtenerTodosEstudiantes = (callback) => {
+  const query = "SELECT * FROM Usuarios WHERE Tipo_Usuario = 'Estudiante'";
+  db.query(query, callback);
+};
+module.exports = Usuario;
+>>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c
