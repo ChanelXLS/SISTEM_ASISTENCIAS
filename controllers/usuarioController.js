@@ -75,3 +75,14 @@ exports.obtenerEstudiantesPorClase = (req, res) => {
     res.status(200).json(result);
   });
 };
+
+exports.obtenerTodosEstudiantes = (req, res) => {
+  Usuario.obtenerTodosEstudiantes((err, result) => {
+    if (err) {
+      console.error("Error en la consulta SQL: ", err);
+      return res.status(500).send("Error al obtener los estudiantes");
+    }
+
+    res.status(200).json(result);
+  });
+};

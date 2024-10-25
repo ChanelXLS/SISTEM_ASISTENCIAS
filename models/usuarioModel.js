@@ -42,4 +42,8 @@ Usuario.obtenerEstudiantesPorClase = (ID_Clase, callback) => {
   db.query(query, [ID_Clase], callback);
 };
 
+Usuario.obtenerTodosEstudiantes = (callback) => {
+  const query = "SELECT * FROM Usuarios WHERE Tipo_Usuario = 'Estudiante'";
+  db.query(query, callback);
+};
 module.exports = Usuario;
