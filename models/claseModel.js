@@ -32,4 +32,9 @@ Clase.crearClase = (Nombre, ID_Profesor, Horario, callback) => {
 >>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c
 };
 
+Clase.obtenerTodasClases = (callback) => {
+  const query = "SELECT * FROM Clases";
+  db.query(query, callback);
+};
+
 module.exports = Clase;
