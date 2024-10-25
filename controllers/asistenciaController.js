@@ -53,3 +53,20 @@ exports.modificarAsistencia = (req, res) => {
     }
   );
 };
+
+exports.obtenerTodasDeEstudianteClase = (req, res) => {
+  const { ID_Estudiante, ID_Clase } = req.body;
+
+  Asistencia.obtenerTodasDeEstudianteClase(
+    ID_Estudiante,
+    ID_Clase,
+    (err, result) => {
+      if (err) {
+        console.error("Error en la consulta SQL: ", err);
+        return res.status(500).send("Error al obtener las asistencias");
+      }
+
+      res.status(200).json(result);
+    }
+  );
+};

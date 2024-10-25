@@ -26,4 +26,13 @@ Asistencia.modificarAsistencia = (
   db.query(query, [Presente, ID_Clase, ID_Estudiante, Fecha], callback);
 };
 
+Asistencia.obtenerTodasDeEstudianteClase = (
+  ID_Estudiante,
+  ID_Clase,
+  callback
+) => {
+  const query =
+    "SELECT * FROM Asistencia WHERE ID_Estudiante = ? AND ID_Clase = ? ORDER BY Fecha DESC";
+  db.query(query, [ID_Estudiante, ID_Clase], callback);
+};
 module.exports = Asistencia;
