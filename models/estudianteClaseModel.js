@@ -9,4 +9,14 @@ EstudianteClase.inscribir = (ID_Estudiante, ID_Clase, callback) => {
   db.query(query, [ID_Estudiante, ID_Clase], callback);
 };
 
+EstudianteClase.eliminarEstudianteDeClase = (
+  ID_Estudiante,
+  ID_Clase,
+  callback
+) => {
+  const query =
+    "DELETE FROM Estudiantes_Clases WHERE ID_Estudiante = ? AND ID_Clase = ?";
+  db.query(query, [ID_Estudiante, ID_Clase], callback);
+};
+
 module.exports = EstudianteClase;
