@@ -31,9 +31,6 @@ Usuario.obtenerPorEmail = (Email, callback) => {
   });
 };
 
-<<<<<<< HEAD
-module.exports = Usuario;
-=======
 Usuario.obtenerEstudiantesPorClase = (ID_Clase, callback) => {
   const query = `
     SELECT u.ID_Usuario, u.Nombre, u.Apellido 
@@ -50,4 +47,3 @@ Usuario.obtenerTodosEstudiantes = (callback) => {
   db.query(query, callback);
 };
 module.exports = Usuario;
->>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c

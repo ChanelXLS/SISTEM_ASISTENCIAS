@@ -61,9 +61,6 @@ exports.loginUsuario = (req, res) => {
       });
     });
   });
-<<<<<<< HEAD
-};
-=======
 };
 
 exports.obtenerEstudiantesPorClase = (req, res) => {
@@ -89,4 +86,3 @@ exports.obtenerTodosEstudiantes = (req, res) => {
     res.status(200).json(result);
   });
 };
->>>>>>> ea7aad209ec8b19684d0aa1d0acb3f7d18700b0c
