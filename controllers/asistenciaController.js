@@ -34,3 +34,22 @@ exports.obtenerPorFechaYClase = (req, res) => {
     res.status(200).json(result);
   });
 };
+
+exports.modificarAsistencia = (req, res) => {
+  const { ID_Clase, ID_Estudiante, Fecha, Presente } = req.body;
+
+  Asistencia.modificarAsistencia(
+    ID_Clase,
+    ID_Estudiante,
+    Fecha,
+    Presente,
+    (err, result) => {
+      if (err) {
+        console.error("Error en la consulta SQL: ", err);
+        return res.status(500).send("Error al modificar la asistencia");
+      }
+
+      res.status(200).send("Asistencia modificada exitosamente");
+    }
+  );
+};
