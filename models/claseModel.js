@@ -13,4 +13,10 @@ Clase.obtenerClasesPorProfesor = (id_profesor, callback) => {
   });
 };
 
+Clase.crearClase = (Nombre, ID_Profesor, Horario, callback) => {
+  const query =
+    "INSERT INTO Clases (Nombre, ID_Profesor, Horario) VALUES(?, ?, ?)";
+  db.query(query, [Nombre, ID_Profesor, Horario], callback);
+};
+
 module.exports = Clase;

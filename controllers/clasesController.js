@@ -14,3 +14,15 @@ exports.obtenerClasesPorProfesor = (req, res) => {
     res.status(200).json(clases);
   });
 };
+
+exports.crearClase = (req, res) => {
+  const { Nombre, ID_Profesor, Horario } = req.body;
+
+  Clase.crearClase(Nombre, ID_Profesor, Horario, (err, clases) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.status(200).send("Clase registrada exitosamente");
+  });
+};
