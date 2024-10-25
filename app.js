@@ -19,11 +19,13 @@ const asistenciaRoutes = require("./routes/asistenciaRoutes");
 const usuarioRoutes = require("./routes/usuarioRoutes");
 const reporteRoutes = require("./routes/reporteRoutes");
 const clasesRoutes = require("./routes/clasesRoutes");
+const estudianteClaseRoutes = require("./routes/estudianteClaseRoutes");
 
 app.use("/asistencia", asistenciaRoutes);
 app.use("/usuarios", usuarioRoutes);
 app.use("/reporte", reporteRoutes);
 app.use("/clases", clasesRoutes);
+app.use("/estudiante-clase", estudianteClaseRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor funcionando correctamente");
